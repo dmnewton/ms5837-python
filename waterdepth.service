@@ -1,0 +1,14 @@
+[Unit]
+Description=Water Depth Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python3 track_depth.py
+WorkingDirectory=/home/pi/ms5837-python
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
